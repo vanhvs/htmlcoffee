@@ -4,6 +4,21 @@
     <title>HTML Coffee Shop</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- If you don't want to download and host Bootstrap 4 yourself, you can include it from a CDN (Content Delivery Network).
+
+MaxCDN provides CDN support for Bootstrap's CSS and JavaScript. You must also include jQuery: -->
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   </head>
   <body>
     <!--
@@ -14,7 +29,7 @@
       Menu: Bao gồm 2 sub-menu 
         Foods: Hình ảnh + giá cả đồ ăn (bánh kẹo)
         Beverages/Coffee: Hình ảnh + giá cả đồ uống/các loại cà phê
-      Order/Book a table: Thông tin đặt bàn hoặc gọi đồ ship 
+      Order/Book a table: Thông tin đặt bàn hoặc gọi đồ ship (chọn món + tính tổng tiền + nút thanh toán)
       Reviews: Đánh giá về quán, text + hình ảnh
       Contact: Thông tin liên hệ bao gồm địa chỉ, số đt, 1 trường text 
       để điền nội dung liên lạc và bản đồ
@@ -26,19 +41,31 @@
           <h1><a href="index.html">HTML Coffee</a></h1>
         </div>
         <div>
-          <nav>
-            <ul>
-              <li><a href="#section-home">Home</a></li>
-              <li>
-                <a href="#section-menu">Menu</a>
-                <ul>
-                  <li><a href="#section-foods">Foods</a></li>
-                  <li><a href="#section-beverages">Beverages</a></li>
-                </ul>
+        <!--With Bootstrap, a navigation bar can extend or collapse, depending on the screen size.
+
+A standard navigation bar is created with the .navbar class, followed by a responsive collapsing class: .navbar-expand-xl|lg|md|sm (stacks the navbar vertically on extra large, large, medium or small screens).
+
+To add links inside the navbar, use a <ul> element with class="navbar-nav". Then add <li> elements with a .nav-item class followed by an <a> element with a .nav-link class-->
+          <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="#">
+              <img src="image/Crème brûlée.png" alt="Logo" style="width:40px;">
+            </a> 
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#section-home">Home</a>
               </li>
-              <li><a href="#section-order">Order</a></li>
-              <li><a href="#section-reviews">Reviews</a></li>
-              <li><a href="#section-contact">Contact</a></li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#section-menu" id="navbardrop" data-toggle="dropdown">
+                  Menu
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="foods.html">Foods</a>
+                  <a class="dropdown-item" href="beverages.html">Beverages</a>
+                </div>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#section-booking">Book a table</a></li>
+              <li class="nav-item"><a class="nav-link" href="reviews.html">Reviews</a></li>
+              <li class="nav-item"><a class="nav-link" href="#section-contact">Contact</a></li>
             </ul>
           </nav>
         </div>
@@ -178,6 +205,16 @@
     <div id="section-contact">
       <p>Here is contact section</p>
     </div>
+
+    <section>
+      <div id="map-block">  	  
+        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBckL9ylbEHvnkxQAJmyd8OCi_onVmUSdw
+        &q=Trường+Đại+học+FPT
+        &attribution_source=Google+Maps+Embed+API
+        &attribution_web_url=http://www.butchartgardens.com/
+        &attribution_ios_deep_link_id=comgooglemaps://?daddr=Butchart+Gardens+Victoria+BC" width="100%" height="450" frameborder="0" style="border:0"></iframe>
+      </div>
+    </section>
 
 
   </body>
